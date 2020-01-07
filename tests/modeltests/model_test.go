@@ -30,11 +30,11 @@ func Database() {
 
 	var err error
 
-	TestDbDriver := os.Getenv("DB_DRIVER")
+	TestDbDriver := os.Getenv("TesteDB_DRIVER")
 
 	if TestDbDriver == "mysql" {
-		DBURL := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_PORT"), os.Getenv("DB_HOST"), os.Getenv("DB_NAME"))
-		server.DB, err = gorm.Open(TestDbDriver, DBURL)
+		TesteDBURL := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", os.Getenv("TesteDB_USER"), os.Getenv("TesteDB_PASSWORD"), os.Getenv("TesteDB_HOST"),  os.Getenv("TesteDB_PORT"), os.Getenv("TesteDB_NAME"))
+		server.DB, err = gorm.Open(TestDbDriver, TesteDBURL)
 		if err != nil {
 			fmt.Printf("Não consegue conectar na  base de dados %s \n", TestDbDriver)
 			log.Fatal("Erro:", err)
@@ -64,7 +64,7 @@ func seedOneUser() (models.User, error) {
 	user := models.User{
 
 		Email: "pet@gmail.com",
-		Senha: "password",
+		Senha: "senha",
 		Nome: "Pet",
 		DtNasc: "10/10/10",
 	}
@@ -81,13 +81,13 @@ func seedUsers() error {
 	users := []models.User{
 		models.User{
 			Email: "jorge@gmail.com",
-			Senha: "password",
+			Senha: "senha",
 			Nome: "Jorge",
 			DtNasc: "11/11/11",
 		},
 		models.User{
 			Email: "carlos@gmail.com",
-			Senha: "password",
+			Senha: "senha",
 			Nome: "Carlos",
 			DtNasc: "15/15/15",
 		},

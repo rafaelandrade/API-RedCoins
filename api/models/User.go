@@ -140,3 +140,4 @@ func (u *User) DeleteUser(db *gorm.DB, uid uint32) (int64, error) {
 
 	return db.RowsAffected, nil
 }
+
