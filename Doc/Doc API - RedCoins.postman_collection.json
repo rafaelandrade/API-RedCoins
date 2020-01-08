@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "7ecd3190-08d5-46c3-8f6c-2418c03a75df",
+		"name": "Doc API - RedCoins",
+		"description": "# Apresentação\n\nDocumentação para utilização da Doc Api – RedCoins.\n\n# Autenticação\nPara utilização desta API foi desenvolvido uma autenticação utilizando JWT, no qual, se baseia na ideía de criação de tokens de acesso sem haver a necessidade de consultar a base de dados, uma vez que a informação para a autenticação é armazenada.\n\n# Error Codes\n\n**400 – Bad Request**\n\nDados enviados de forma incorreta ou fora do padrão.\n\n**403 – Forbidden**\n\nSem autorização suficiente para acessar o recurso desejado.\n\n** Erro de validação **\n\nPara o usuário possuir acesso a API é necessário que seus dados estejam devidamente cadastrados.\n\n** Erro de acesso ao banco de dados **\n\nCaso ao iniciar a API não obtenha acesso a base de dados irá retornar um erro.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuário",
+			"item": [
+				{
+					"name": "localhost:8080/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						},
+						"description": "Exibe uma lista com todos os usuários cadastrados no sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						},
+						"description": "Cadastra um novo usuário no sistema."
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						},
+						"description": "Nesta requisição é possível realizar o login de um determinado usuário."
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/users/2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"2"
+							]
+						},
+						"description": "Esta requisição tem como propósito deletar um determinado usuário."
+					},
+					"response": []
+				}
+			],
+			"description": "Esta pasta representa um objetivo do tipo Usuário na Doc API - RedCoins",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "WalletCoins",
+			"item": [],
+			"description": "Esta pasta representa o objeto WalletCoins na API - RedCoins",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
